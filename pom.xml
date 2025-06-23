@@ -71,6 +71,10 @@
 			<groupId>de.codecentric</groupId>
 			<artifactId>spring-boot-admin-starter-client</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-activemq</artifactId>
+		</dependency>
 	</dependencies>
 <dependencyManagement>
   <dependencies>
@@ -88,6 +92,7 @@
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
+			
   </dependencies>
 </dependencyManagement>
 

@@ -1,0 +1,216 @@
+2025-06-23T12:55:26.438+05:30  INFO 19620 --- [order-service] [main] [                                                 ] com.in.OrderApplication                  : Starting OrderApplication using Java 17.0.8.1 with PID 19620 (C:\Users\bsarala\Documents\Practice\Git_SourceCode\order-service\target\classes started by bsarala in C:\Users\bsarala\Documents\Practice\Git_SourceCode\order-service)
+2025-06-23T12:55:26.446+05:30  INFO 19620 --- [order-service] [main] [                                                 ] com.in.OrderApplication                  : No active profile set, falling back to 1 default profile: "default"
+2025-06-23T12:55:29.200+05:30  INFO 19620 --- [order-service] [main] [                                                 ] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2025-06-23T12:55:29.231+05:30  INFO 19620 --- [order-service] [main] [                                                 ] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-23T12:55:29.231+05:30  INFO 19620 --- [order-service] [main] [                                                 ] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-06-23T12:55:29.415+05:30  INFO 19620 --- [order-service] [main] [                                                 ] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-23T12:55:29.417+05:30  INFO 19620 --- [order-service] [main] [                                                 ] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2881 ms
+2025-06-23T12:55:31.682+05:30  INFO 19620 --- [order-service] [main] [                                                 ] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 15 endpoints beneath base path '/actuator'
+2025-06-23T12:55:31.815+05:30  INFO 19620 --- [order-service] [main] [                                                 ] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2025-06-23T12:55:31.841+05:30  INFO 19620 --- [order-service] [main] [                                                 ] com.in.OrderApplication                  : Started OrderApplication in 6.469 seconds (process running for 8.167)
+2025-06-23T12:55:32.138+05:30  WARN 19620 --- [order-service] [registrationTask1] [                                                 ] d.c.b.a.c.r.ApplicationRegistrator       : Failed to register application as Application(name=order-service, managementUrl=http://LIN-5CG2093W1D.corp.capgemini.com:8081/actuator, healthUrl=http://LIN-5CG2093W1D.corp.capgemini.com:8081/actuator/health, serviceUrl=http://LIN-5CG2093W1D.corp.capgemini.com:8081/) at spring-boot-admin ([http://localhost:8085/instances]): I/O error on POST request for "http://localhost:8085/instances": null. Further attempts are logged on DEBUG level
+
+org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:8085/instances": null
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.createResourceAccessException(DefaultRestClient.java:697) ~[spring-web-6.2.7.jar:6.2.7]
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchangeInternal(DefaultRestClient.java:582) ~[spring-web-6.2.7.jar:6.2.7]
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchange(DefaultRestClient.java:533) ~[spring-web-6.2.7.jar:6.2.7]
+	at org.springframework.web.client.RestClient$RequestHeadersSpec.exchange(RestClient.java:680) ~[spring-web-6.2.7.jar:6.2.7]
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.executeAndExtract(DefaultRestClient.java:814) ~[spring-web-6.2.7.jar:6.2.7]
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.body(DefaultRestClient.java:758) ~[spring-web-6.2.7.jar:6.2.7]
+	at de.codecentric.boot.admin.client.registration.RestClientRegistrationClient.register(RestClientRegistrationClient.java:45) ~[spring-boot-admin-client-3.5.0.jar:3.5.0]
+	at de.codecentric.boot.admin.client.registration.DefaultApplicationRegistrator.register(DefaultApplicationRegistrator.java:80) ~[spring-boot-admin-client-3.5.0.jar:3.5.0]
+	at de.codecentric.boot.admin.client.registration.DefaultApplicationRegistrator.register(DefaultApplicationRegistrator.java:61) ~[spring-boot-admin-client-3.5.0.jar:3.5.0]
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) ~[spring-context-6.2.7.jar:6.2.7]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305) ~[na:na]
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+Caused by: java.net.ConnectException: null
+	at java.net.http/jdk.internal.net.http.common.Utils.toConnectException(Utils.java:1055) ~[java.net.http:na]
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:198) ~[java.net.http:na]
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.checkRetryConnect(PlainHttpConnection.java:230) ~[java.net.http:na]
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$1(PlainHttpConnection.java:206) ~[java.net.http:na]
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1773) ~[na:na]
+	... 3 common frames omitted
+Caused by: java.nio.channels.ClosedChannelException: null
+	at java.base/sun.nio.ch.SocketChannelImpl.ensureOpen(SocketChannelImpl.java:195) ~[na:na]
+	at java.base/sun.nio.ch.SocketChannelImpl.beginConnect(SocketChannelImpl.java:760) ~[na:na]
+	at java.base/sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:848) ~[na:na]
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$0(PlainHttpConnection.java:183) ~[java.net.http:na]
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:569) ~[na:na]
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:185) ~[java.net.http:na]
+	... 9 common frames omitted
+
+2025-06-23T12:55:32.797+05:30  INFO 19620 --- [order-service] [RMI TCP Connection(3)-127.0.0.1] [                                                 ] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-23T12:55:32.798+05:30  INFO 19620 --- [order-service] [RMI TCP Connection(3)-127.0.0.1] [                                                 ] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-06-23T12:55:32.800+05:30  INFO 19620 --- [order-service] [RMI TCP Connection(3)-127.0.0.1] [                                                 ] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-06-23T12:55:33.163+05:30  WARN 19620 --- [order-service] [AsyncReporter{ZipkinHttpClientSender{http://localhost:9411/api/v2/spans}}] [                                                 ] z.r.i.AsyncReporter$BoundedAsyncReporter : Spans were dropped due to exceptions. All subsequent errors will be logged at FINE level.
+2025-06-23T12:55:33.164+05:30  WARN 19620 --- [order-service] [AsyncReporter{ZipkinHttpClientSender{http://localhost:9411/api/v2/spans}}] [                                                 ] z.r.i.AsyncReporter$BoundedAsyncReporter : Dropped 1 spans due to ConnectException()
+
+java.net.ConnectException: null
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:573) ~[java.net.http:na]
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:123) ~[java.net.http:na]
+	at org.springframework.boot.actuate.autoconfigure.tracing.zipkin.ZipkinHttpClientSender.postSpans(ZipkinHttpClientSender.java:60) ~[spring-boot-actuator-autoconfigure-3.5.0.jar:3.5.0]
+	at org.springframework.boot.actuate.autoconfigure.tracing.zipkin.HttpSender.postSpans(HttpSender.java:69) ~[spring-boot-actuator-autoconfigure-3.5.0.jar:3.5.0]
+	at org.springframework.boot.actuate.autoconfigure.tracing.zipkin.HttpSender.postSpans(HttpSender.java:41) ~[spring-boot-actuator-autoconfigure-3.5.0.jar:3.5.0]
+	at zipkin2.reporter.BaseHttpSender.send(BaseHttpSender.java:123) ~[zipkin-reporter-3.5.0.jar:na]
+	at zipkin2.reporter.internal.AsyncReporter$BoundedAsyncReporter.flush(AsyncReporter.java:266) ~[zipkin-reporter-3.5.0.jar:na]
+	at zipkin2.reporter.internal.AsyncReporter$Flusher.run(AsyncReporter.java:352) ~[zipkin-reporter-3.5.0.jar:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+Caused by: java.net.ConnectException: null
+	at java.net.http/jdk.internal.net.http.common.Utils.toConnectException(Utils.java:1055) ~[java.net.http:na]
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:198) ~[java.net.http:na]
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.checkRetryConnect(PlainHttpConnection.java:230) ~[java.net.http:na]
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$1(PlainHttpConnection.java:206) ~[java.net.http:na]
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1773) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
+	... 1 common frames omitted
+Caused by: java.nio.channels.ClosedChannelException: null
+	at java.base/sun.nio.ch.SocketChannelImpl.ensureOpen(SocketChannelImpl.java:195) ~[na:na]
+	at java.base/sun.nio.ch.SocketChannelImpl.beginConnect(SocketChannelImpl.java:760) ~[na:na]
+	at java.base/sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:848) ~[na:na]
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$0(PlainHttpConnection.java:183) ~[java.net.http:na]
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:569) ~[na:na]
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:185) ~[java.net.http:na]
+	... 9 common frames omitted
+
+2025-06-23T12:55:35.502+05:30  INFO 19620 --- [order-service] [RMI TCP Connection(2)-127.0.0.1] [                                                 ] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2025-06-23T12:55:35.509+05:30  INFO 19620 --- [order-service] [RMI TCP Connection(2)-127.0.0.1] [                                                 ] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-23T12:55:36.168+05:30  INFO 19620 --- [order-service] [tomcat-shutdown] [                                                 ] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-06-23T12:56:34.483+05:30  INFO 14888 --- [order-service] [main] [                                                 ] com.in.OrderApplication                  : Starting OrderApplication using Java 17.0.8.1 with PID 14888 (C:\Users\bsarala\Documents\Practice\Git_SourceCode\order-service\target\classes started by bsarala in C:\Users\bsarala\Documents\Practice\Git_SourceCode\order-service)
+2025-06-23T12:56:34.490+05:30  INFO 14888 --- [order-service] [main] [                                                 ] com.in.OrderApplication                  : No active profile set, falling back to 1 default profile: "default"
+2025-06-23T12:56:36.742+05:30  INFO 14888 --- [order-service] [main] [                                                 ] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2025-06-23T12:56:36.773+05:30  INFO 14888 --- [order-service] [main] [                                                 ] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-23T12:56:36.774+05:30  INFO 14888 --- [order-service] [main] [                                                 ] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-06-23T12:56:36.920+05:30  INFO 14888 --- [order-service] [main] [                                                 ] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-23T12:56:36.921+05:30  INFO 14888 --- [order-service] [main] [                                                 ] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2350 ms
+2025-06-23T12:56:38.663+05:30  INFO 14888 --- [order-service] [main] [                                                 ] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 15 endpoints beneath base path '/actuator'
+2025-06-23T12:56:38.790+05:30  INFO 14888 --- [order-service] [main] [                                                 ] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2025-06-23T12:56:38.822+05:30  INFO 14888 --- [order-service] [main] [                                                 ] com.in.OrderApplication                  : Started OrderApplication in 5.432 seconds (process running for 6.977)
+2025-06-23T12:56:39.546+05:30  INFO 14888 --- [order-service] [RMI TCP Connection(3)-127.0.0.1] [                                                 ] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-23T12:56:39.547+05:30  INFO 14888 --- [order-service] [RMI TCP Connection(3)-127.0.0.1] [                                                 ] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-06-23T12:56:39.550+05:30  INFO 14888 --- [order-service] [RMI TCP Connection(3)-127.0.0.1] [                                                 ] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-06-23T12:59:11.025+05:30  WARN 14888 --- [order-service] [AsyncReporter{ZipkinHttpClientSender{http://localhost:9411/api/v2/spans}}] [                                                 ] z.r.i.AsyncReporter$BoundedAsyncReporter : Spans were dropped due to exceptions. All subsequent errors will be logged at FINE level.
+2025-06-23T12:59:11.026+05:30  WARN 14888 --- [order-service] [AsyncReporter{ZipkinHttpClientSender{http://localhost:9411/api/v2/spans}}] [                                                 ] z.r.i.AsyncReporter$BoundedAsyncReporter : Dropped 2 spans due to ConnectException()
+
+java.net.ConnectException: null
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:573) ~[java.net.http:na]
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:123) ~[java.net.http:na]
+	at org.springframework.boot.actuate.autoconfigure.tracing.zipkin.ZipkinHttpClientSender.postSpans(ZipkinHttpClientSender.java:60) ~[spring-boot-actuator-autoconfigure-3.5.0.jar:3.5.0]
+	at org.springframework.boot.actuate.autoconfigure.tracing.zipkin.HttpSender.postSpans(HttpSender.java:69) ~[spring-boot-actuator-autoconfigure-3.5.0.jar:3.5.0]
+	at org.springframework.boot.actuate.autoconfigure.tracing.zipkin.HttpSender.postSpans(HttpSender.java:41) ~[spring-boot-actuator-autoconfigure-3.5.0.jar:3.5.0]
+	at zipkin2.reporter.BaseHttpSender.send(BaseHttpSender.java:123) ~[zipkin-reporter-3.5.0.jar:na]
+	at zipkin2.reporter.internal.AsyncReporter$BoundedAsyncReporter.flush(AsyncReporter.java:266) ~[zipkin-reporter-3.5.0.jar:na]
+	at zipkin2.reporter.internal.AsyncReporter$Flusher.run(AsyncReporter.java:352) ~[zipkin-reporter-3.5.0.jar:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+Caused by: java.net.ConnectException: null
+	at java.net.http/jdk.internal.net.http.common.Utils.toConnectException(Utils.java:1055) ~[java.net.http:na]
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:198) ~[java.net.http:na]
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.checkRetryConnect(PlainHttpConnection.java:230) ~[java.net.http:na]
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$1(PlainHttpConnection.java:206) ~[java.net.http:na]
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1773) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
+	... 1 common frames omitted
+Caused by: java.nio.channels.ClosedChannelException: null
+	at java.base/sun.nio.ch.SocketChannelImpl.ensureOpen(SocketChannelImpl.java:195) ~[na:na]
+	at java.base/sun.nio.ch.SocketChannelImpl.beginConnect(SocketChannelImpl.java:760) ~[na:na]
+	at java.base/sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:848) ~[na:na]
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$0(PlainHttpConnection.java:183) ~[java.net.http:na]
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:569) ~[na:na]
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:185) ~[java.net.http:na]
+	... 9 common frames omitted
+
+2025-06-23T13:15:12.033+05:30  INFO 14888 --- [order-service] [RMI TCP Connection(23)-127.0.0.1] [                                                 ] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2025-06-23T13:15:12.035+05:30  INFO 14888 --- [order-service] [RMI TCP Connection(23)-127.0.0.1] [                                                 ] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-23T13:15:12.283+05:30  INFO 14888 --- [order-service] [tomcat-shutdown] [                                                 ] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-06-23T14:48:00.762+05:30  INFO 16900 --- [order-service] [main] [                                                 ] com.in.OrderApplication                  : Starting OrderApplication using Java 17.0.8.1 with PID 16900 (C:\Users\bsarala\Documents\Practice\Git_SourceCode\order-service\target\classes started by bsarala in C:\Users\bsarala\Documents\Practice\Git_SourceCode\order-service)
+2025-06-23T14:48:00.770+05:30  INFO 16900 --- [order-service] [main] [                                                 ] com.in.OrderApplication                  : No active profile set, falling back to 1 default profile: "default"
+2025-06-23T14:48:03.235+05:30  INFO 16900 --- [order-service] [main] [                                                 ] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2025-06-23T14:48:03.261+05:30  INFO 16900 --- [order-service] [main] [                                                 ] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-23T14:48:03.262+05:30  INFO 16900 --- [order-service] [main] [                                                 ] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-06-23T14:48:03.431+05:30  INFO 16900 --- [order-service] [main] [                                                 ] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-23T14:48:03.431+05:30  INFO 16900 --- [order-service] [main] [                                                 ] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2571 ms
+2025-06-23T14:48:05.218+05:30  INFO 16900 --- [order-service] [main] [                                                 ] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 15 endpoints beneath base path '/actuator'
+2025-06-23T14:48:05.344+05:30  INFO 16900 --- [order-service] [main] [                                                 ] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2025-06-23T14:48:05.373+05:30  INFO 16900 --- [order-service] [main] [                                                 ] com.in.OrderApplication                  : Started OrderApplication in 5.746 seconds (process running for 7.479)
+2025-06-23T14:48:06.171+05:30  INFO 16900 --- [order-service] [RMI TCP Connection(3)-127.0.0.1] [                                                 ] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-23T14:48:06.172+05:30  INFO 16900 --- [order-service] [RMI TCP Connection(3)-127.0.0.1] [                                                 ] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-06-23T14:48:06.174+05:30  INFO 16900 --- [order-service] [RMI TCP Connection(3)-127.0.0.1] [                                                 ] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-06-23T14:50:55.991+05:30  INFO 16900 --- [order-service] [RMI TCP Connection(7)-127.0.0.1] [                                                 ] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2025-06-23T14:50:55.997+05:30  INFO 16900 --- [order-service] [RMI TCP Connection(7)-127.0.0.1] [                                                 ] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-23T14:50:56.703+05:30  INFO 16900 --- [order-service] [tomcat-shutdown] [                                                 ] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-06-23T14:52:33.272+05:30  INFO 19816 --- [order-service] [main] [                                                 ] com.in.OrderApplication                  : Starting OrderApplication using Java 17.0.8.1 with PID 19816 (C:\Users\bsarala\Documents\Practice\Git_SourceCode\order-service\target\classes started by bsarala in C:\Users\bsarala\Documents\Practice\Git_SourceCode\order-service)
+2025-06-23T14:52:33.279+05:30  INFO 19816 --- [order-service] [main] [                                                 ] com.in.OrderApplication                  : No active profile set, falling back to 1 default profile: "default"
+2025-06-23T14:52:35.923+05:30  INFO 19816 --- [order-service] [main] [                                                 ] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2025-06-23T14:52:35.956+05:30  INFO 19816 --- [order-service] [main] [                                                 ] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-23T14:52:35.957+05:30  INFO 19816 --- [order-service] [main] [                                                 ] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-06-23T14:52:36.115+05:30  INFO 19816 --- [order-service] [main] [                                                 ] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-23T14:52:36.116+05:30  INFO 19816 --- [order-service] [main] [                                                 ] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2739 ms
+2025-06-23T14:52:37.946+05:30  INFO 19816 --- [order-service] [main] [                                                 ] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 15 endpoints beneath base path '/actuator'
+2025-06-23T14:52:38.081+05:30  INFO 19816 --- [order-service] [main] [                                                 ] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2025-06-23T14:52:38.114+05:30  INFO 19816 --- [order-service] [main] [                                                 ] com.in.OrderApplication                  : Started OrderApplication in 5.868 seconds (process running for 7.445)
+2025-06-23T14:52:38.887+05:30  INFO 19816 --- [order-service] [RMI TCP Connection(3)-127.0.0.1] [                                                 ] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-23T14:52:38.888+05:30  INFO 19816 --- [order-service] [RMI TCP Connection(3)-127.0.0.1] [                                                 ] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-06-23T14:52:38.890+05:30  INFO 19816 --- [order-service] [RMI TCP Connection(3)-127.0.0.1] [                                                 ] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-06-23T14:53:31.792+05:30  INFO 19816 --- [order-service] [ActiveMQ Connection Executor: tcp://localhost/127.0.0.1:8161@56534] [                                                 ] o.s.j.c.CachingConnectionFactory         : Encountered a JMSException - resetting the underlying JMS Connection
+
+jakarta.jms.JMSException: Unknown data type: 47
+	at org.apache.activemq.util.JMSExceptionSupport.create(JMSExceptionSupport.java:67) ~[activemq-client-6.1.6.jar:6.1.6]
+	at org.apache.activemq.ActiveMQConnection.onAsyncException(ActiveMQConnection.java:2033) ~[activemq-client-6.1.6.jar:6.1.6]
+	at org.apache.activemq.ActiveMQConnection.onException(ActiveMQConnection.java:2052) ~[activemq-client-6.1.6.jar:6.1.6]
+	at org.apache.activemq.transport.TransportFilter.onException(TransportFilter.java:114) ~[activemq-client-6.1.6.jar:6.1.6]
+	at org.apache.activemq.transport.ResponseCorrelator.onException(ResponseCorrelator.java:126) ~[activemq-client-6.1.6.jar:6.1.6]
+	at org.apache.activemq.transport.TransportFilter.onException(TransportFilter.java:114) ~[activemq-client-6.1.6.jar:6.1.6]
+	at org.apache.activemq.transport.TransportFilter.onException(TransportFilter.java:114) ~[activemq-client-6.1.6.jar:6.1.6]
+	at org.apache.activemq.transport.WireFormatNegotiator.onException(WireFormatNegotiator.java:173) ~[activemq-client-6.1.6.jar:6.1.6]
+	at org.apache.activemq.transport.AbstractInactivityMonitor.onException(AbstractInactivityMonitor.java:346) ~[activemq-client-6.1.6.jar:6.1.6]
+	at org.apache.activemq.transport.TransportSupport.onException(TransportSupport.java:96) ~[activemq-client-6.1.6.jar:6.1.6]
+	at org.apache.activemq.transport.tcp.TcpTransport.run(TcpTransport.java:220) ~[activemq-client-6.1.6.jar:6.1.6]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+Caused by: java.io.IOException: Unknown data type: 47
+	at org.apache.activemq.openwire.OpenWireFormat.doUnmarshal(OpenWireFormat.java:380) ~[activemq-client-6.1.6.jar:6.1.6]
+	at org.apache.activemq.openwire.OpenWireFormat.unmarshal(OpenWireFormat.java:295) ~[activemq-client-6.1.6.jar:6.1.6]
+	at org.apache.activemq.transport.tcp.TcpTransport.readCommand(TcpTransport.java:241) ~[activemq-client-6.1.6.jar:6.1.6]
+	at org.apache.activemq.transport.tcp.TcpTransport.doRun(TcpTransport.java:233) ~[activemq-client-6.1.6.jar:6.1.6]
+	at org.apache.activemq.transport.tcp.TcpTransport.run(TcpTransport.java:216) ~[activemq-client-6.1.6.jar:6.1.6]
+	... 1 common frames omitted
+
+2025-06-23T14:53:31.834+05:30 ERROR 19816 --- [order-service] [http-nio-8081-exec-1] [                                                 ] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.jms.UncategorizedJmsException: Uncategorized exception occurred during JMS processing] with root cause
+
+java.io.IOException: Unknown data type: 47
+	at org.apache.activemq.openwire.OpenWireFormat.doUnmarshal(OpenWireFormat.java:380) ~[activemq-client-6.1.6.jar:6.1.6]
+	at org.apache.activemq.openwire.OpenWireFormat.unmarshal(OpenWireFormat.java:295) ~[activemq-client-6.1.6.jar:6.1.6]
+	at org.apache.activemq.transport.tcp.TcpTransport.readCommand(TcpTransport.java:241) ~[activemq-client-6.1.6.jar:6.1.6]
+	at org.apache.activemq.transport.tcp.TcpTransport.doRun(TcpTransport.java:233) ~[activemq-client-6.1.6.jar:6.1.6]
+	at org.apache.activemq.transport.tcp.TcpTransport.run(TcpTransport.java:216) ~[activemq-client-6.1.6.jar:6.1.6]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2025-06-23T14:56:25.619+05:30  INFO 19816 --- [order-service] [RMI TCP Connection(9)-127.0.0.1] [                                                 ] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2025-06-23T14:56:25.625+05:30  INFO 19816 --- [order-service] [RMI TCP Connection(9)-127.0.0.1] [                                                 ] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-23T14:56:26.310+05:30  INFO 19816 --- [order-service] [tomcat-shutdown] [                                                 ] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-06-23T14:56:57.269+05:30  INFO 15676 --- [order-service] [main] [                                                 ] com.in.OrderApplication                  : Starting OrderApplication using Java 17.0.8.1 with PID 15676 (C:\Users\bsarala\Documents\Practice\Git_SourceCode\order-service\target\classes started by bsarala in C:\Users\bsarala\Documents\Practice\Git_SourceCode\order-service)
+2025-06-23T14:56:57.277+05:30  INFO 15676 --- [order-service] [main] [                                                 ] com.in.OrderApplication                  : No active profile set, falling back to 1 default profile: "default"
+2025-06-23T14:56:59.729+05:30  INFO 15676 --- [order-service] [main] [                                                 ] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2025-06-23T14:56:59.753+05:30  INFO 15676 --- [order-service] [main] [                                                 ] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-23T14:56:59.754+05:30  INFO 15676 --- [order-service] [main] [                                                 ] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-06-23T14:56:59.908+05:30  INFO 15676 --- [order-service] [main] [                                                 ] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-23T14:56:59.910+05:30  INFO 15676 --- [order-service] [main] [                                                 ] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2545 ms
+2025-06-23T14:57:01.906+05:30  INFO 15676 --- [order-service] [main] [                                                 ] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 15 endpoints beneath base path '/actuator'
+2025-06-23T14:57:02.041+05:30  INFO 15676 --- [order-service] [main] [                                                 ] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2025-06-23T14:57:02.076+05:30  INFO 15676 --- [order-service] [main] [                                                 ] com.in.OrderApplication                  : Started OrderApplication in 5.807 seconds (process running for 7.367)
+2025-06-23T14:57:02.506+05:30  INFO 15676 --- [order-service] [RMI TCP Connection(3)-127.0.0.1] [                                                 ] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-23T14:57:02.507+05:30  INFO 15676 --- [order-service] [RMI TCP Connection(3)-127.0.0.1] [                                                 ] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-06-23T14:57:02.509+05:30  INFO 15676 --- [order-service] [RMI TCP Connection(3)-127.0.0.1] [                                                 ] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
